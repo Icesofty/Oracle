@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="leading-tight">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <title>Delightful Web Templates</title>
+  </head>
+
+  <!--
+
+  Delightful, Created by https://html5hq.com/ 
+  Follow me on Twitter to get Update : https://twitter.com/icesofty
+   
+  This work is licensed under the MIT License.
+  To view a copy of this license, read the LICENCE file.
+
+ -->
+
+  <body class="overflow-x-hidden font-sans font-light">
+    <section
+      class="homescreen m-0 flex flex-col justify-around bg-gray-800 h-screen text-gray-100"
+    >
+      <nav class="flex justify-between">
+        <p class="text-xl py-8 px-8 uppercase md:px-48">
+          ORACLE<span class="text-teal-400 font-bold">BLOCKCHAIN</span>
+        </p>
+      </nav>
+
+      <h1 class="text-3xl my-auto mx-auto font-light md:mx-48 lg:text-6xl">
+        A simple Blockchain <br />
+        <span class="text-teal-400 font-medium">Made with Go and Node.</span>
+      </h1>
+    </section>
+
+    <script src="./star.js"></script>
+    <script>
+      //refresh page on browser resize
+      $(window).bind("resize", function (e) {
+        if (window.RT) clearTimeout(window.RT);
+        window.RT = setTimeout(function () {
+          this.location.reload(false); /* false to get page from cache */
+        }, 200);
+      });
+    </script>
+  </body>
+</html>
