@@ -18,6 +18,10 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
+app.post("/wallet", (request, response) => {
+  response.sendFile(__dirname + "/views/wallet.html");
+});
+
 app.get("/block/:path", (req, res) => {
   fs.readFile("./public/blocks.json", "utf8", (err, blocks) => {
     if (err) {
@@ -32,7 +36,7 @@ app.get("/block/:path", (req, res) => {
       const unquotedHash = data[previousIndex].Hash.replace(/['"]+/g, "");
       const unquotedPreviousHash = data[previousIndex].PreviousHash.replace(
         /['"]+/g,
-        "",
+        ""
       );
 
       let POW;
@@ -70,13 +74,13 @@ app.get("/block/:path", (req, res) => {
           PreviousHash: data[previousIndex].Hash,
           Hash: dig.toString(),
           Timestamp: Date.now(),
-          Difficulty: difficulty,
+          Difficulty: difficulty
         });
 
         try {
           const data = fs.writeFileSync(
             "./public/blocks.json",
-            JSON.stringify(json),
+            JSON.stringify(json)
           );
         } catch (err) {
           console.error(err);
@@ -94,5 +98,5 @@ app.get("/block/:path", (req, res) => {
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+  console.log("The server is listening on port " + listener.address().port);
 });
